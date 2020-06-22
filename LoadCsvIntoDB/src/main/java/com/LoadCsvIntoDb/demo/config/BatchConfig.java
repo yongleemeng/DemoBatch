@@ -42,7 +42,8 @@ public class BatchConfig {
     /**
      * JobBuilderFactory(JobRepository jobRepository)  Convenient factory for a JobBuilder which sets the JobRepository automatically
      */
-    @Bean
+    //@Bean
+    @Deprecated
     public Job readCSVFileJob() {
         return jobBuilderFactory
                 .get("readCSVFileJob")
@@ -59,7 +60,7 @@ public class BatchConfig {
     public Step step() {
         return stepBuilderFactory
                 .get("step")
-                .<Hotels, Hotels>chunk(5)
+                .<Hotels, Hotels>chunk(100)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())

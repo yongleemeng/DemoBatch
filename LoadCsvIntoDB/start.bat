@@ -1,0 +1,1 @@
+java -jar target/App-0.0.2-SNAPSHOT.jar
